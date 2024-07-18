@@ -17,16 +17,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Name is mandatory")
-    @Size(min = 1, message = "Name must not be empty")
+    @NotNull(message = "Please enter your name.")
+    @Size(min = 1, message = "Your name must not be empty.")
     private String name;
 
-    @NotNull(message = "Age is mandatory")
-    @Min(value = 1, message = "Age must be greater than 0")
+    @NotNull(message = "Kindly enter your age.")
+    @Min(value = 13, message = "You must be older than 13.")
     private Integer age;
 
-    @NotNull(message = "Email is mandatory")
-    @Email(message = "Email should be valid")
+    @NotNull(message = "Enter your email please.")
+    @Email(message = "Please enter a valid email.")
     private String email;
 
     public Long getId() {
