@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.Book;
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,11 +27,11 @@ public class UserController {
         return userService.findById(id);
     }
     @PostMapping
-    public User addUser(@RequestBody User user) {
+    public User addUser(@Valid @RequestBody User user) {
         return userService.save(user);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User userDetails) {
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @Valid  @RequestBody User userDetails) {
         User existingUser = userService.findById(id);
         if (existingUser == null) {
             return ResponseEntity.notFound().build();
