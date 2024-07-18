@@ -32,6 +32,8 @@ http://localhost:8080/api/users allows us to view all the users in the database
 
 http://localhost:8080/api/books/X where X is the ID number displays the relative book, and same for users.
 
+A dependency was also added to the pom.xml file which helps ensure the validity of the entered data for the users when it comes to their age, email and name.
+
 http://localhost:8080/api/books/borrow/X/byuser/Y where X is the book ID and Y is the user ID, allowing the user to borrow this book, thus updating the book's attributes.
 
 http://localhost:8080/api/books/return/X/fromuser/Y where X is the book ID and Y is the user ID, allowing the user to return this book and correspondingly re-update the book attributes.
